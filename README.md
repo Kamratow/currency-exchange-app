@@ -4,7 +4,7 @@
 
 For running the app you will need to have a `.env` file with currency API key and endpoints in your project directory.
 Endpoint URLs had been put there as we might have different API urls for different environments - from dev through test until the production. This way we only need to change the url endpoint in `.env` when deploying app to different environments.
-The API_KEY shouldn't be exposed evend in `.env` file - ideally I would suggest to create even some small middleware backend that would allow to store the API KEY on the server side (instead of current situation where it's on the client side).
+The API_KEY shouldn't be exposed even in `.env` file - ideally I would suggest to create even some small middleware backend that would allow to store the API KEY on the server side (instead of current situation where it's on the client side).
 I will pack the `.env` file in the zip with solution but it has been added to `.gitignore` so that we wouldn't commit it accidentally to the repository.
 Example of the `.env` file:
 
