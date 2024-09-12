@@ -10,8 +10,8 @@ Example of the `.env` file:
 
 ```
 VITE_CURRENCY_BEACON_API_KEY="your_api_key_goes_here"
-VITE_CURRENCY_BEACON_API_CURRENCIES_ENDPOINT="endpoint_url_goes_here"
-VITE_CURRENCY_BEACON_API_CONVERT_ENDPOINT="endpoint_url_goes_here"
+VITE_CURRENCY_BEACON_API_CURRENCIES_ENDPOINT="https://api.currencybeacon.com/v1/currencies"
+VITE_CURRENCY_BEACON_API_CONVERT_ENDPOINT="https://api.currencybeacon.com/v1/convert"
 ```
 
 When extending `.env` file remember to add `VITE_` as the first piece of new variable name as without this it won't work in Vite.
