@@ -1,0 +1,17 @@
+.CurrencyConverterWrapper {
+    margin: auto;
+    max-width: 70%;
+    padding: 1em;
+    border-radius: 1em;
+    border: 2px solid #008000;
+}
+
+.RowWrapper {
+    width: 100%;
+    display: flex;
+}
+
+.RowItemWrapper {
+    width: 50%;
+    margin: 1em;
+}
