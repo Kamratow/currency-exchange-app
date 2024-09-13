@@ -9,14 +9,14 @@ export default function roundToDecimal(value: number) {
 
     const numbersAfterDot = stringValue.split(".")[1];
 
-    for (let i = 0; i < numbersAfterDot.length - 1; i++) {
+    for (let i = 0; i < numbersAfterDot.length; i++) {
       if (numbersAfterDot[i] !== "0") {
         precision = i + 1;
         break;
       }
     }
 
-    if (!!numbersAfterDot[precision + 1]) {
+    if (!!numbersAfterDot[precision]) {
       precision = precision + 1;
     }
   }
