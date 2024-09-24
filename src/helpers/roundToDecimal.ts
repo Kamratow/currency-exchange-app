@@ -5,7 +5,7 @@ export default function roundToDecimal(value: number) {
 
   // check and fix precision for very small values
   if (value < 1) {
-    let stringValue = value.toString();
+    const stringValue = value.toString();
 
     const numbersAfterDot = stringValue.split(".")[1];
 
@@ -16,7 +16,7 @@ export default function roundToDecimal(value: number) {
       }
     }
 
-    if (!!numbersAfterDot[precision]) {
+    if (numbersAfterDot[precision]) {
       precision = precision + 1;
     }
   }

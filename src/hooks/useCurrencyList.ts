@@ -22,9 +22,8 @@ export default function useCurrencyList(): UseCurrencyListReturn {
   const [isErrorForFetchingCurrencyList, setIsErrorForFetchingCurrencyList] =
     useState<boolean>(false);
 
-  const currencyBeaconApiKey = import.meta.env.VITE_CURRENCY_BEACON_API_KEY;
-
   useEffect(() => {
+    const currencyBeaconApiKey = import.meta.env.VITE_CURRENCY_BEACON_API_KEY;
     const currenciesApiUrl = import.meta.env
       .VITE_CURRENCY_BEACON_API_CURRENCIES_ENDPOINT;
     const currenciesUrlWithParams =
@@ -45,6 +44,7 @@ export default function useCurrencyList(): UseCurrencyListReturn {
         );
         setCurrenciesList(currenciesShortCodeList);
       } catch (error) {
+        console.log(error);
         setIsErrorForFetchingCurrencyList(true);
       } finally {
         setIsFetchingCurrencyList(false);

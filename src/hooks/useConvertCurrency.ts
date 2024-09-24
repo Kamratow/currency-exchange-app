@@ -59,6 +59,7 @@ export default function useConvertCurrency({
 
         setConvertedAmount(roundToDecimal(json.response.value).toString());
       } catch (error) {
+        console.log(error);
         setIsErrorForConvertingAmount(true);
       }
     };
@@ -76,7 +77,7 @@ export default function useConvertCurrency({
       setConvertedAmount(amountToConvert);
     }
 
-    if (amountToConvert == "") {
+    if (amountToConvert === "") {
       setConvertedAmount(amountToConvert);
     }
   }, [currencyFrom, currencyTo, amountToConvert]);
