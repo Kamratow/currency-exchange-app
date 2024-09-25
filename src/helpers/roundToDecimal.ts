@@ -1,5 +1,5 @@
 // manual way of rounding the value to decimal - I have updated some solution I found externally with a precision fix for very small numbers
-export default function roundToDecimal(value: number) {
+export default function roundToDecimal(value: number): number {
   // default precision is 2 decimal places
   let precision: number = 2;
 

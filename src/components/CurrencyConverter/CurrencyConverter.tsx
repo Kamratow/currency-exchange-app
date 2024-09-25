@@ -25,11 +25,12 @@ function CurrencyConverter() {
     isErrorForFetchingCurrencyList,
   } = useCurrencyList();
 
-  const { convertedAmount, isErrorForConvertingAmount } = useConvertCurrency({
-    currencyFrom,
-    currencyTo,
-    amountToConvert,
-  });
+  const { convertedAmount, isErrorForConvertingAmount, lastConvertedValues } =
+    useConvertCurrency({
+      currencyFrom,
+      currencyTo,
+      amountToConvert,
+    });
 
   const isEverythingFilledInForConversion =
     amountToConvert !== "" &&
@@ -116,6 +117,17 @@ function CurrencyConverter() {
       {isErrorForConvertingAmount && (
         <p>Something went wrong when converting currency. Please try again.</p>
       )}
+
+      <div>
+        <p>History of conversions:</p>
+        {lastConvertedValues.map((singleValue, index) => (
+          // I know index is a weak identifier so for the future we should consider using some other unique data
+          <p key={index}>
+            From: {singleValue.from} Amount from: {singleValue.amountFrom} To:{" "}
+            {singleValue.to} Amount to: {singleValue.amountTo}{" "}
+          </p>
+        ))}
+      </div>
     </div>
   );
 }
