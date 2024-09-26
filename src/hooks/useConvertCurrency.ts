@@ -40,12 +40,11 @@ export default function useConvertCurrency({
     LastConvertedValues[]
   >([]);
 
-  // this is how for example we can use config from env file to set history length
-  // after chaging history length in .env we need to redeploy the app
-  // we are converting here the value from config to number using + sign
-  const historyLength = +import.meta.env.VITE_CONVERSION_HISTORY_LENGTH;
-
   useEffect(() => {
+    // this is how for example we can use config from env file to set history length
+    // after chaging history length in .env we need to redeploy the app
+    // we are converting here the value from config to number using + sign
+    const historyLength = +import.meta.env.VITE_CONVERSION_HISTORY_LENGTH;
     const currencyBeaconApiKey = import.meta.env.VITE_CURRENCY_BEACON_API_KEY;
     const convertApiUrl = import.meta.env
       .VITE_CURRENCY_BEACON_API_CONVERT_ENDPOINT;
